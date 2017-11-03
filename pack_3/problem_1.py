@@ -4,12 +4,7 @@ class TStringStack:
         self.stack=""
     def check(self):
         for i in range(len(self.string)):
-            if (self.string[i]=="{") 
-            or (self.string[i]=="[") 
-            or (self.string[i]=="(") 
-            or (self.string[i]=="}") 
-            or (self.string[i]=="]") 
-            or (self.string[i]==")"):
+            if (self.string[i]=="{") or (self.string[i]=="[") or (self.string[i]=="(") or (self.string[i]=="}") or (self.string[i]=="]") or (self.string[i]==")"):
                 self.stack+=self.string[i]
             if self.string[i]=="}":
                 if self.stack[len(self.stack)-2]=="{":
