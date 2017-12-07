@@ -97,3 +97,34 @@ def CorrectMistakesAuth(message, lib):
             if len(list2)-k <= min(len(list2),len(list1))//3 :
                 newmessage = x
     return newmessage
+
+def FindingOut(s):
+    global lib
+    if s in lib.keys(): return 0
+    elif s in lib.values(): return 1
+    else: return -1
+
+def ReturnForAuthor(mes):
+    global lib
+    lib = ReturnLib()
+    s = CorrectMistakesAuth(mes, lib)
+    out = ''
+    if s in lib.values():
+        for x in lib.keys():
+            if lib[x] == s:
+                out += x + '\n'
+    if out != '':
+        return out
+    else:
+        return -1
+
+
+def ReturnForBook(mes):
+    global lib
+    lib = ReturnLib()
+    s = CorrectMistakes(mes, lib)
+    if s in lib.keys():
+        return lib[s]
+    else:
+        return -1
+
